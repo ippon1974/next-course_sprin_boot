@@ -47,7 +47,7 @@ Post.getInitialProps = async ({query, req}) => {
     const response = await fetch(`http://localhost:4300/test?id=${query.id}`);
     const post = await response.json();
     console.log("Post two ", post)
-    
+
     return {
         post
     }
