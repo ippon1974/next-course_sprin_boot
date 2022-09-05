@@ -45,19 +45,30 @@ export default function Posts({posts:serverPosts}) {
     )
 }
 
-Posts.getInitialProps = async ({req}) => {
-    if(!req){
-        return  {posts: null}
-    }
-    //const response = await fetch('http://localhost:4200/posts');
-    // const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
-    //     headers: {'Content-Type':'application/json'},
-    //     mode: 'no-cors'
-    // });
-    const response = await fetch('http://localhost:4300/test/all')
-    const posts = await response.json()
+// Posts.getInitialProps = async ({req}) => {
+//     if(!req){
+//         return  {posts: null}
+//     }
+//     //const response = await fetch('http://localhost:4200/posts');
+//     // const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
+//     //     headers: {'Content-Type':'application/json'},
+//     //     mode: 'no-cors'
+//     // });
+//     const response = await fetch('http://localhost:4300/test/all')
+//     const posts = await response.json()
+//
+//     return {posts:posts}
+// }
 
-    return {
-        posts:posts
+export async function getServerSideProps({req}) {
+    if(!req){
+        return {post:null}
     }
+    const response = await fetch('http://localhost:4300/test/all')
+    const posts = await response.json();
+
+    return {props: {posts}}
 }
+
+
+
