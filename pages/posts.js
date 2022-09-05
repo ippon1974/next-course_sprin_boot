@@ -22,11 +22,11 @@ export default function Posts({posts:serverPosts}) {
         }
     }, []);
 
-    if(!posts){
-        return <MainLayout>
-            <p>...Loading</p>
-        </MainLayout>
-    }
+    // if(!posts){
+    //     return <MainLayout>
+    //         <p>...Loading</p>
+    //     </MainLayout>
+    // }
 
     return (
         <MainLayout title={'Post Page'}>
