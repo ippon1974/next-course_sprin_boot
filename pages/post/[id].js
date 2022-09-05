@@ -12,7 +12,6 @@ export default function Post({post:serverPost}) {
            //const response = await fetch(`http://localhost:4200/posts/${router.query.id}`);
            const response = await fetch(`http://localhost:4300/test?id=${router.query.id}`);
            const data = await response.json();
-           console.log(data)
            setPost(data);
        }
        if(!serverPost){
@@ -38,29 +37,26 @@ export default function Post({post:serverPost}) {
     )
 }
 
-Post.getInitialProps = async ({query, req}) => {
+// Post.getInitialProps = async ({query, req}) => {
+//     if(!req){
+//         return {post:null}
+//     }
+//     const response = await fetch(`http://localhost:4300/test?id=${query.id}`);
+//     const post = await response.json();
+//     console.log("Post two ", post)
+//     return {
+//         post
+//     }
+// }
 
+export async function getServerSideProps({query, req}) {
     if(!req){
         return {post:null}
     }
 
     const response = await fetch(`http://localhost:4300/test?id=${query.id}`);
     const post = await response.json();
-    console.log("Post two ", post)
 
-    return {
-        post
-    }
+
+    return {props: {post}}
 }
-
-// export async function getServerSideProps({query, req}) {
-//     if(!req){
-//         return {post:null}
-//     }
-//
-//     const response = await fetch(`http://localhost:4200/posts/${query.id}`);
-//     const post = await response.json();
-//
-//
-//     return {props: {post}}
-// }

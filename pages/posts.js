@@ -14,7 +14,6 @@ export default function Posts({posts:serverPosts}) {
           //     mode: 'no-cors'
           // });
           const response = await fetch('http://localhost:4300/test/all')
-            console.log(response)
           const json = await response.json();
           setPosts(json);
         }
@@ -56,7 +55,6 @@ Posts.getInitialProps = async ({req}) => {
     //     mode: 'no-cors'
     // });
     const response = await fetch('http://localhost:4300/test/all')
-    console.log('Response form ' , response)
     const posts = await response.json()
 
     return {
