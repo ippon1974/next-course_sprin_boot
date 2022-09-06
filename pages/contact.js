@@ -1,46 +1,47 @@
+import {MainLayout} from "../components/MainLayout";
 import {useState, useEffect} from 'react';
-import Link from "next/link";
-import {MainLayout} from '../components/MainLayout'
 
-export default function Contact(){
+export default function Contacts() {
 
-    const url = 'http://localhost:4300/test';
-    const data = {
-        username: 'Moscow New',
-        is_published : 0,
-        city:'Belomestnoe'
-    };
-
-    try {
-        const response = fetch(url, {
-            method: 'POST', // или 'PUT'
-            body: JSON.stringify(data), // данные могут быть 'строкой' или {объектом}!
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        });
-        const json = response.json();
-        console.log('Успех:', JSON.stringify(json));
-    } catch (error) {
-        console.error('Ошибка:', error);
-    }
-
-
+    const [count, setCount] = useState(0);
+    console.log(count)
 
     return (
-        <MainLayout title={'Contact'}>
-        <h1>Contact</h1>
-        <p><Link href={'/about'}><a>About</a></Link></p>
-        <p><Link href={'/posts'}><a>Posts</a></Link></p>
-        <p><Link href={'/contact'}><a>Contacts</a></Link></p>
+            <MainLayout>
+                <h1>Идите в Жопу </h1>
 
-            <form method="post">
-                <label htmlFor="username">name:</label>
-                <input type="text" id="username" name="username"/>
-                <label htmlFor="city">city:</label>
-                <input type="text" id="city" name="city"/>
-                <button type="submit">Submit</button>
-            </form>
+                <button onClick={() => setCount(count + 1)}>
+                    Нажми на меня
+                </button>
 
-    </MainLayout>)
+
+                <p>ole ole ole </p>
+
+                <hr/>
+                <div className="max-w-xs my-2 overflow-hidden rounded shadow-lg">
+                    <div className="px-6 py-4">
+                        <div className="mb-2 text-xl font-bold">Contact us</div>
+                        <form className="flex flex-col">
+                            <label htmlFor="name" className="mb-2 italic">Name</label>
+                            <input
+                                className="mb-4 border-b-2"
+                                id="name"
+                                name="name"
+                                type="text"
+                                autoComplete="name"
+                                required
+                            />
+                            <button
+                                type="submit"
+                                className="px-4 py-2 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-700"
+                            >
+                                Submit
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <hr/>
+
+            </MainLayout>
+    )
 }
