@@ -3,19 +3,18 @@ import {useState, useEffect} from 'react';
 
 export default function Contacts() {
 
-    const [count, setCount] = useState(0);
+    const [count, setCount] = useState(2.756565);
     console.log(count)
 
     return (
             <MainLayout>
-                <h1>Идите в Жопу </h1>
+                <h1>{count}</h1>
 
-                <button onClick={() => setCount(count + 1)}>
+                <button onClick={() => setCount(count / 0.74555)}>
                     Нажми на меня
                 </button>
 
-
-                <p>ole ole ole </p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias corporis dignissimos dolorem ducimus eius, exercitationem explicabo fuga, ipsum molestiae necessitatibu</p>
 
                 <hr/>
                 <div className="max-w-xs my-2 overflow-hidden rounded shadow-lg">

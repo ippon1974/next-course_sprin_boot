@@ -7,6 +7,7 @@ export default function Index(){
         <p><Link href={'/about'}><a>About</a></Link></p>
         <p><Link href={'/posts'}><a>Posts</a></Link></p>
         <p><Link href={'/contact'}><a>Contacts</a></Link></p>
+        <p><Link href={'/airlines'}><a>Airlines</a></Link></p>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
         </MainLayout>
 }

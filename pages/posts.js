@@ -31,7 +31,6 @@ export default function Posts({posts:serverPosts}) {
     return (
         <MainLayout title={'Post Page'}>
         <h1>Posts Page</h1>
-            {/*<pre>{JSON.stringify(posts, null, 2)}</pre>*/}
             <ul>
                 {posts.map(post => (
                     <li key={post.id}>
