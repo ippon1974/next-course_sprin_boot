@@ -17,15 +17,21 @@ export default function Airlines({airlines:serverAirlines}) {
         }
     }, []);
 
+    if(!airlines){
+        return <MainLayout>
+            <p>...Loading</p>
+        </MainLayout>
+    }
+
     return (
         <MainLayout title={'Airlines Page'}>
             <h1>Airlines Page</h1>
             <ul>
                 {airlines.map(post => (
                     <li key={post.airlines_id}>
-                        <Link href={`/post/[id]`} as={`/post/${post.airlines_id}`}>
+                        <Link href={`/airline/[id]`} as={`/airline/${post.airlines_id}`}>
                             <a>{post.name}</a>
-                        </Link>
+                        </Link> / {post.country}
                     </li>
                 ))}
             </ul>

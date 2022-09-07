@@ -55,7 +55,5 @@ export async function getServerSideProps({query, req}) {
     }
     const response = await fetch(`http://localhost:4300/test?id=${query.id}`);
     const post = await response.json();
-
-
     return {props: {post}}
 }
