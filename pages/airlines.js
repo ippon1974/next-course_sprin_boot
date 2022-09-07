@@ -30,7 +30,7 @@ export default function Airlines({airlines:serverAirlines}) {
                 {airlines.map(post => (
                     <li key={post.airlines_id}>
                         <Link href={`/airline/[id]`} as={`/airline/${post.airlines_id}`}>
-                            <a>{post.name}</a>
+                            <a title={post.name}>{post.name}</a>
                         </Link> / {post.country}
                     </li>
                 ))}

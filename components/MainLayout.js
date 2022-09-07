@@ -11,14 +11,23 @@ export function MainLayout({children, title="Next App"}) {
                     <meta name="keywords" content="HTML, CSS, JavaScript" />
                 </Head>
                 <nav>
-                    <Link href={'/'}><a>Home</a></Link>
-                    <Link href={'/about'}><a>About</a></Link>
-                    <Link href={'/posts'}><a>Posts</a></Link>
-                    <Link href={'/contact'}><a>Contacts</a></Link>
+                    <ul>
+                        <li><Link href={'/'}><a>Home</a></Link></li>
+                        <li><Link href={'/about'}><a>About</a></Link></li>
+                        <li><Link href={'/posts'}><a>Posts</a></Link></li>
+                        <li><Link href={'/contact'}><a>Contacts</a></Link></li>
+                        <li><Link href={'/airlines'}><a>Airlines</a></Link></li>
+                        <li><Link href={'/contact'}><a>Contacts</a></Link></li>
+                        <li><strong><Link href={'/form'}><a>Form</a></Link></strong></li>
+                    </ul>
                 </nav>
                 <main>
                     {children}
                 </main>
+                <footer>
+                    <hr/>
+                    2022 Hello React !
+                </footer>
             </>
     )
 }

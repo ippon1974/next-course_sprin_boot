@@ -8,7 +8,7 @@ export default function MyApp({ Component, pageProps }) {
                 color="red"
                 startPosition={0.3}
                 stopDelayMs={2}
-                height={1}
+                height={2}
                 showOnShallow={true} />
             <Component {...pageProps} />
         </>

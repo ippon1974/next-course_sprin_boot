@@ -8,11 +8,6 @@ export default function Posts({posts:serverPosts}) {
 
     useEffect(()=>{
         async function load() {
-          //const response = await fetch('http://localhost:4200/posts');
-          // const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
-          //     headers: {'Content-Type':'application/json'},
-          //     mode: 'no-cors'
-          // });
           const response = await fetch('http://localhost:4300/test/all')
           const json = await response.json();
           setPosts(json);

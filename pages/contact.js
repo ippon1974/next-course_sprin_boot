@@ -2,24 +2,18 @@ import {MainLayout} from "../components/MainLayout";
 import {useState, useEffect} from 'react';
 
 export default function Contacts() {
-
-    const [count, setCount] = useState(2.756565);
-    console.log(count)
-
+    const [count, setCount] = useState(3.14);
     return (
-            <MainLayout>
+            <MainLayout title={'Contacts'}>
                 <h1>{count}</h1>
-
                 <button onClick={() => setCount(count / 0.74555)}>
-                    Нажми на меня
+                    Жми не бойся!
                 </button>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias corporis dignissimos dolorem ducimus eius, exercitationem explicabo fuga, ipsum molestiae necessitatibu</p>
 
                 <hr/>
                 <div className="max-w-xs my-2 overflow-hidden rounded shadow-lg">
                     <div className="px-6 py-4">
-                        <div className="mb-2 text-xl font-bold">Contact us</div>
+                        <div className="mb-2 text-xl font-bold">Contact us </div>
                         <form className="flex flex-col">
                             <label htmlFor="name" className="mb-2 italic">Name</label>
                             <input
