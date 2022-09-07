@@ -3,11 +3,18 @@ import {useState, useEffect} from 'react';
 
 export default function Contacts() {
     const [count, setCount] = useState(3.14);
+    const [sub, setSub] = useState(2.7);
+
     return (
             <MainLayout title={'Contacts'}>
-                <h1>{count}</h1>
+                <h1>{count} // Pi</h1>
                 <button onClick={() => setCount(count / 0.74555)}>
                     Жми не бойся!
+                </button>
+                <br/>
+                <h1>{sub} // Exp</h1>
+                <button onClick={() => setSub(sub * 0.385)}>
+                    Жми не ссы
                 </button>
 
                 <hr/>
