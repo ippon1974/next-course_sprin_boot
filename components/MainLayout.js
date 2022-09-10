@@ -18,6 +18,7 @@ export function MainLayout({children, title="Next App"}) {
                         <li><Link href={'/airlines'}><a>Airlines</a></Link></li>
                         <li><Link href={'/contact'}><a>Contacts</a></Link></li>
                         <li><strong><Link href={'/form'}><a>Form</a></Link></strong></li>
+                        <li><strong><Link href={'/formselect'}><a>Form Select</a></Link></strong></li>
                     </ul>
                 </nav>
                 <main>
