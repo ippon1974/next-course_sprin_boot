@@ -4,14 +4,14 @@ import {MainLayout} from "../components/MainLayout";
 const TestPosts = (props)=> {
 
     const [username, setUsername] = useState('')
-    const [password, setPassword] = useState('')
+    const [city, setCity] = useState('')
     const [codres, setCodres] = useState('')
 
     const submit = () => {
-        fetch('http://localhost:4300/users', {
+        fetch('http://localhost:4300/test', {
             method: "POST",
             headers: {'Content-Type':'application/json'},
-            body: JSON.stringify({username:username, password:password})
+            body: JSON.stringify({username:username, city:city})
         })
             .then((response) => {
                 if(response.status === 200){
@@ -41,11 +41,11 @@ const TestPosts = (props)=> {
                 </label>
 
                 <label>
-                    Passw:
+                    City:
                     <input
                         type="text"
-                        value={password}
-                        onChange={e => setPassword(e.target.value)}
+                        value={city}
+                        onChange={e => setCity(e.target.value)}
                     />
                 </label>
 
@@ -59,16 +59,16 @@ const TestPosts = (props)=> {
 
 }
 
-TestPosts.getInitialProps = async ({req}) => {
-    if(!req){
-        return {post:null}
-    }
-    const response = await fetch(`http://localhost:4300/users`);
-    const post = await response.json();
-    console.log("Post two ", post)
-    return {
-        post
-    }
-}
+// TestPosts.getInitialProps = async ({req}) => {
+//     if(!req){
+//         return {post:null}
+//     }
+//     const response = await fetch(`http://localhost:4300/users`);
+//     const post = await response.json();
+//     console.log("Post two ", post)
+//     return {
+//         post
+//     }
+// }
 
 export default TestPosts
