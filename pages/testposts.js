@@ -11,7 +11,7 @@ const TestPosts = (props)=> {
         fetch('http://localhost:4300/test', {
             method: "POST",
             headers: {'Content-Type':'application/json'},
-            body: JSON.stringify({username:username, city:city})
+            body: JSON.stringify({username:username, city:city, is_published:0})
         })
             .then((response) => {
                 if(response.status === 200){
