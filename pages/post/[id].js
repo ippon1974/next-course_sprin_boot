@@ -2,12 +2,31 @@ import {useState, useEffect} from 'react';
 import {MainLayout} from "../../components/MainLayout";
 import Link from "next/link";
 import {useRouter} from "next/router";
-import {event} from "next/dist/build/output/log";
+import { confirmAlert } from 'react-confirm-alert'; // Import
+import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 
 export default function Post({post:serverPost}) {
     const [post, setPost] = useState(serverPost);
     const [status, setStatus] = useState(null);
     const router = useRouter();
+
+    const submit = () => {
+        confirmAlert({
+            title: 'Confirm to submit',
+            message: 'Are you sure to do this.',
+            buttons: [
+                {
+                    label: 'Yes',
+                    onClick: () => del()
+                },
+                {
+                    label: 'No',
+                    //onClick: () => alert('Click No')
+                }
+            ]
+        });
+    }
+
 
     const del = () => {
         // DELETE request using fetch with async/await
@@ -51,8 +70,9 @@ export default function Post({post:serverPost}) {
             <p>Меня зовут: {post.name}</p>
             <p>Город: {post.city}</p>
             <p>
-                <button onClick={(e)=>{e.preventDefault(); del()}}>Delete</button> /
-                <button>Modify</button>
+                {/*<button onClick={(e)=>{e.preventDefault(); del()}}>Delete</button>*/}
+                <button onClick={submit}>Delete</button>
+                {/*<button>Modify</button>*/}
             </p>
             <Link href={'/posts'}><a>Back to Posts</a></Link>
         </MainLayout>
