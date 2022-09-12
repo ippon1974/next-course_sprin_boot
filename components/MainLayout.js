@@ -21,7 +21,7 @@ export function MainLayout({children, title="Next App"}) {
                         <li><strong><Link href={'/form'}><a>Form</a></Link></strong></li>
                         <li><strong><Link href={'/formselect'}><a>Form Select</a></Link></strong></li>
                         <li><strong><Link href={'/in_text'}><a>In Text</a></Link></strong></li>
-                        <li><Link href={'/arrow'}><a>Arrow</a></Link></li>
+                        <li><Link href={'/crudform'}><a>Crud Form</a></Link></li>
                     </ul>
                 </nav>
                 <main>
