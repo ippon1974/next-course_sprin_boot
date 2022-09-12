@@ -8,7 +8,7 @@ const TestPosts = (props)=> {
     const [codres, setCodres] = useState('')
 
     const submit = () => {
-        fetch('http://23.105.246.179:4300/test', {
+        fetch('http://localhost:4300/test', {
             method: "POST",
             headers: {'Content-Type':'application/json'},
             body: JSON.stringify({username:username, city:city, is_published:0})
@@ -27,7 +27,7 @@ const TestPosts = (props)=> {
 
     return(
         <MainLayout>
-            <h1>Testing of {codres}</h1>
+            <h1>Add Post {codres}</h1>
 
             <form onSubmit={(e) => {e.preventDefault(); submit()}}>
 

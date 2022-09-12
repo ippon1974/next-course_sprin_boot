@@ -18,6 +18,7 @@ const Exp = (props) => {
     };
 
     return (
+        <>
         <div>
             <form onSubmit={handleSubmit}>
                 <input
@@ -37,6 +38,7 @@ const Exp = (props) => {
                 <button type="submit">Submit form</button>
             </form>
         </div>
+            </>
     );
 };
 
