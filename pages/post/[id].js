@@ -71,7 +71,7 @@ export default function Post({post:serverPost}) {
             <p>Город: {post.city}</p>
             <p>
                 {/*<button onClick={(e)=>{e.preventDefault(); del()}}>Delete</button>*/}
-                <button onClick={submit}>Delete</button>
+                    <button disabled={status} onClick={submit}>Delete</button>
                 {/*<button>Modify</button>*/}
             </p>
             <Link href={'/posts'}><a>Back to Posts</a></Link>
