@@ -8,7 +8,7 @@ const TestPosts = (props)=> {
     const [codres, setCodres] = useState('')
 
     const submit = () => {
-        fetch('http://localhost:4300/test', {
+        fetch('http://23.105.246.179:4300/test', {
             method: "POST",
             headers: {'Content-Type':'application/json'},
             body: JSON.stringify({username:username, city:city, is_published:0})
