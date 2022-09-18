@@ -8,7 +8,7 @@ export default function Users({users:serverPosts}) {
 
     useEffect(()=>{
         async function load() {
-            const response = await fetch('http://localhost:4300/users/all')
+            const response = await fetch('http://23.105.246.179:4300/users/all')
             const json = await response.json();
             setUsers(json);
         }

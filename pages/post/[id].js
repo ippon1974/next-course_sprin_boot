@@ -31,7 +31,7 @@ export default function Post({post:serverPost}) {
     const del = () => {
         // DELETE request using fetch with async/await
         async function deletePost() {
-            await fetch(`http://localhost:4300/test/${router.query.id}`, {
+            await fetch(`http://23.105.246.179:4300/test/${router.query.id}`, {
                 method: 'DELETE'
             }).then((response)=>{
                 console.log(response.status);
@@ -44,7 +44,7 @@ export default function Post({post:serverPost}) {
 
     useEffect(()=>{
        async function load() {
-           const response = await fetch(`http://localhost:4300/test?id=${router.query.id}`);
+           const response = await fetch(`http://23.105.246.179:4300/test?id=${router.query.id}`);
            const data = await response.json();
            setPost(data);
        }
@@ -95,7 +95,7 @@ export async function getServerSideProps({query, req}) {
     if(!req){
         return {post:null}
     }
-    const response = await fetch(`http://localhost:4300/test?id=${query.id}`);
+    const response = await fetch(`http://23.105.246.179:4300/test?id=${query.id}`);
     const post = await response.json();
 
     return {props: {post}}

@@ -8,7 +8,7 @@ export default function Airlines({airlines:serverAirlines}) {
 
     useEffect(()=>{
         async function load() {
-            const response = await fetch('http://localhost:4300/airlines/all')
+            const response = await fetch('http://23.105.246.179:4300/airlines/all')
             const json = await response.json();
             setAirlines(json);
         }
@@ -43,7 +43,7 @@ export async function getServerSideProps({req}) {
     if(!req){
         return {post:null}
     }
-    const response = await fetch('http://localhost:4300/airlines/all')
+    const response = await fetch('http://23.105.246.179:4300/airlines/all')
     const airlines = await response.json();
 
     return {props: {airlines}}
